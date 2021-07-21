@@ -1,0 +1,160 @@
+body, html {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.header {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 80%;
+}
+
+.wrapper-top {
+  max-width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-top h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.category {
+  list-style: none;
+  display: flex;
+}
+
+.category li {
+  margin: 15px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: #f7f7f7;
+  color: grey;
+  transition: background-color 0.8s, color 0.8s;
+  text-transform: uppercase;
+}
+
+.items.active {
+  background-color: #02475e;
+  color: white;
+}
+
+.items:hover {
+  background-color: #02475e;
+  color: white;
+}
+
+.photo-album {
+  max-width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.images {
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s;
+  animation: move 0.5s ease;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin: 0px;
+  position: absolute;
+  color: white;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  opacity: 0;
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+
+}
+
+.images:hover .all {
+  transform: scale(1.1, 1.1);
+}
+
+.images:hover .title {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.show{
+  display: grid;
+  animation: move 3s ease;
+
+}
+@keyframes move {
+  80%{
+    transform: translate(0px,0px);
+  }
+}
+.hide{
+  display: none;
+}
+@media screen and (max-width:1000px) {
+    .wrapper{
+      max-width: 80%;
+      max-height: 100%;
+      
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+    .wrapper-top{
+      max-width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+    .wrapper-top h1{
+      font-size: 20px;
+    }
+    .category{
+      font-size: 15px;
+
+
+    }
+      .category li{
+        font-size: 15px;
+        margin: 10px;
+      }
+      .photo-album {
+        width: 40%;
+        height: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+}
